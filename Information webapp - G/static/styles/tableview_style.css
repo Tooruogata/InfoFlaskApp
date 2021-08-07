@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #01D1D1;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+ }
+ /* Dropdown button on hover & focus */
+ .dropbtn:hover, .dropbtn:focus {
+   background-color: #01D1D1;
+ }
+ /* The search field */
+ #myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+ }
+ /* The search field when it gets focus/clicked on */
+ #myInput:focus {outline: 3px solid #ddd;}
+ /* The container <div> - needed to position the dropdown content */
+ .dropdown {
+   position: relative;
+   display: inline-block;
+   z-index: 20;
+ }
+ /* Dropdown Content (Hidden by Default) */
+ .dropdown-content {
+  display: none;
+   position: absolute;
+   background-color: #f6f6f6;
+   min-width: 230px;
+   border: 1px solid #ddd;
+   z-index: 20;
+ }
+ /* Links inside the dropdown */
+ .dropdown-content a {
+  color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   z-index: 20;
+
+ }
+ /* Change color of dropdown links on hover */
+ .dropdown-content a:hover {background-color: #f1f1f1}
+ /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+ .show {display:block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.boton-buscar {
+  border: 2px solid #5A35B6;
+  background: transparent;
+  border-radius: 3px;
+  color: #5A35B6;
+}
+
+.boton-buscar:hover {
+  border: 2px solid #5A35B6;
+  background: #5A35B6;
+  border-radius: 3px;
+  color: white;
+}
+
+.boton-buscar:hover b {
+  color: #fff;
+}
+
+
+.navbar-brand {
+  color: #5A35B6;
+  text-decoration: none;
+  -webkit-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+.navbar-brand:hover {
+  color: #01D1D1;
+  text-decoration: none;
+  -webkit-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+a {
+  color: #5A35B6;
+  text-decoration: none;
+  -webkit-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  opacity: 0.8;
+  color: white;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.outline-btn {
+  display: inline-block;
+  padding: 10px 35px;
+  margin: 3px;
+  border: 2px solid #5A35B6;
+  background: transparent;
+  border-radius: 3px;
+  -webkit-transition: 0.2s opacity;
+  transition: all 0.3s ease-out;
+  color: #5A35B6;
+}
+
+
+.pricing {
+  position: relative;
+  text-align: center;
+  border: 1px solid #EEE;
+  background-color: #FFF;
+  z-index: 11;
+  margin: 15px 0px;
+}
+
+.pricing::after {
+  content: "";
+  background-color: #5A35B6;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0%;
+  z-index: -1;
+  -webkit-transition: 0.2s;
+  transition: 0.5s all ease-in-out;
+  color: white !important;
+}
+
+.pricing:hover:after {
+  height: 100%;
+}
+
+.pricing .price-head {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.pricing .price-title {
+  display: block;
+  padding: 40px 0px 20px;
+  text-transform: uppercase;
+  -webkit-transition: 0.2s color;
+  transition: 0.2s color;
+}
+
+.pricing:hover .price-title {
+  color: white;
+}
+.pricing:hover .price-content{
+color: white;
+}
+
+.pricing:hover .price-btn{
+  color: white;
+  border: 2px solid white;
+  }
+
+  .pricing:hover .a {
+    color: white;
+    }
+  
+
+.pricing .price {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid #9398EC;
+}
+
+.pricing:hover .price {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.pricing .price h3 {
+  font-size: 42px;
+  margin: 0px;
+  -webkit-transition: 0.2s color;
+  transition: 0.2s color;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.pricing:hover .price h3 {
+  color: #fff;
+}
+
+.pricing:hover .price-btn a {
+  color: #fff;
+}
+
+.pricing .duration {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #5A35B6;
+  -webkit-transition: 0.2s color;
+  transition: 0.2s color;
+}
+
+.pricing:hover .duration .price-btn{
+  color: #fff;
+  border: white;
+}
+
+.pricing  {
+  padding-top: 20px;
+  padding-bottom: 40px;
+ 
+}
+
+
+
+.price-btn{
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px;
+  border: 1px solid #5A35B6;
+  background: transparent;
+  border-radius: 3px;
+  -webkit-transition: 0.2s opacity;
+  transition: all 0.3s ease-out;
+  color: #5A35B6;
+  height: 30px
+}
+
+.price-btn:hover{
+  display: inline-block;
+  padding: 10px 35px;
+  margin: 3px;
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 3px;
+  -webkit-transition: 0.2s opacity;
+  transition: all 0.3s ease-out;
+  color: white;
+
+}
+
+.pricing .price-btn:hover {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border: 2px solid white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
