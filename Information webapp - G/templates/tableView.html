@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/tableview_style.css') }}">
+
+    <title>Information web app</title>
+  </head>
+  <body>
+    
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal"><a class="navbar-brand" href="/">Home</a></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="{{ url_for('reporteador') }}"  >Tables' cards</a>
+        <a class="p-2 text-dark" href="{{ url_for('dashboards') }}"   >Simple dashboard</a>
+      </nav>
+    </div>
+
+    <div class="container">
+
+      <div class="text-center mb-5 col-md-10 mx-auto">
+        <h2 class="font-weight-bold display-4 "><span style="color: #5A35B6">Tables' cards</span></h2>
+
+        <div class="d-flex justify-content-center">
+        <form class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}" method="post">
+
+          <input class="form-control mr-lg-2" type="search" placeholder="Key words" aria-label="Search" name="search_like">
+          <br> </br>
+          
+          <button class="btn btn-outline-success my-2 my-sm-0 boton-buscar" type="submit" style="color:#5A35B6" ><b>Search</b></button>
+          
+
+        </form>
+
+      </div> 
+    </div>
+
+
+      <div class="container">
+
+
+<!--  -->
+
+<div id="pricing" class="section md-padding">
+    
+  <!-- Container -->
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="title"> </h2>
+    </div>
+    <!-- Row -->
+    <div class="row">
+      <!-- Section header -->
+
+      <!-- /Section header -->
+
+      {% for i in tablas.index %}
+      <!-- pricing -->
+      <div class="col-sm-4">
+        <div class="pricing">
+          <div class="price-head">
+            <span class="price-title">{{ tablas.table_name[i] }}</span>
+            <div class="price">
+              <h3>R-{{ tablas.index[i] }}<span class="duration"></span></h3>
+            </div>
+          </div>
+          <ul class="price-content">
+            <li>
+              <p style="margin: 15px; height: 100px; font-size: 14px;"> 
+
+                 Status: {{ tablas.status[i] }}  
+
+                 <br>
+
+                 Last analyzed: {{ tablas.last_analyzed[i] }} 
+
+              </p>
+            </li>
+            <br>
+
+          </ul>
+          
+            {% set nombre_tabla = tablas.table_name[i] %}
+            <a href="{{ url_for('reporte_i', table_name = nombre_tabla) }}" ><div class="price-btn"> CSV  </div></a>
+            <a href="{{ url_for('reporte_json', table_name_json = nombre_tabla ) }}" ><div class="price-btn"> API  </div></a>
+
+            <br>
+            <a href="https://www.google.com/" ><div class="price-btn"> DICTIONARY  </div></a>
+
+            <br>
+            <a href="{{ url_for('muestra_i', table_name_top = nombre_tabla ) }}" ><div class="price-btn"> SAMPLE  </div></a>
+
+         
+
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+      <!-- /pricing -->
+
+
+    </div>
+    <!-- Row -->
+
+  </div>
+  <!-- /Container -->
+
+</div>
+
+
+
+
+<!--  -->
+
+  <div class="py-5">
+          <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+
+            <small class="d-block mb-3 text-muted">Name of Institution or Organization</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Footer 1</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Cool stuff</a></li>
+              <li><a class="text-muted" href="#">Random feature</a></li>
+              <li><a class="text-muted" href="#">Team feature</a></li>
+              <li><a class="text-muted" href="#">Stuff for developers</a></li>
+              <li><a class="text-muted" href="#">Another one</a></li>
+              <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Footer 2</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Resource</a></li>
+              <li><a class="text-muted" href="#">Resource name</a></li>
+              <li><a class="text-muted" href="#">Another resource</a></li>
+              <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Footer 3</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Team</a></li>
+              <li><a class="text-muted" href="#">Locations</a></li>
+              <li><a class="text-muted" href="#">Privacy</a></li>
+              <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+
+</html>
